@@ -1,0 +1,6 @@
+/.venv
+/data/output
+/logs
+/demos
+airflow.env
+/config
