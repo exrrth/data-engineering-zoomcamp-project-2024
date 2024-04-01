@@ -19,7 +19,7 @@ file_postfix = datetime.now().strftime("%Y%m%d")
 dag = DAG(
     dag_id='etl_aqicn_pipeline',
     default_args=default_args,
-    schedule_interval='*/15 * * * *', #every 15 minute
+    schedule_interval='*/20 * * * *', #every 20 minute
     catchup=False,
     tags=['air_pollution', 'etl', 'pipeline']
 )
