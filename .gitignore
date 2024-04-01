@@ -4,3 +4,7 @@
 /demos
 airflow.env
 /config
+/dags/__pycache__
+/etls/__pycache__
+/pipelines/__pycache__
+/utils/__pycache__
