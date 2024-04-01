@@ -5,15 +5,9 @@ from datetime import datetime, timedelta
 from utils.constants import aqicn_api_key, google_api_key
 
 def extract_air_quality_data(lat, lon):
-    # Construct the AQICN API URL
     aqicn_url = f"http://api.waqi.info/feed/geo:{lat};{lon}/?token={aqicn_api_key}"
-
-    # Make the AQICN API request
     response = requests.get(aqicn_url)
-
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Convert the JSON response to a dictionary
         data = response.json()
         return data
     else:
@@ -21,18 +15,11 @@ def extract_air_quality_data(lat, lon):
         return None
 
 def extract_location_data(lat, lon):
-    # Construct the Google Maps Geocoding API URL for reverse geocoding
     google_geocoding_url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lon}&key={google_api_key}"
-
-    # Make the API request
     response = requests.get(google_geocoding_url)
-
-    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Convert the JSON response to a dictionary
         data = response.json()
         if data['status'] == 'OK':
-            # Extract country and city from the response
             for result in data['results']:
                 for component in result['address_components']:
                     if 'country' in component['types']:
@@ -63,7 +50,6 @@ def calculate_pm25(aqi):
 
 def transform_data(air_quality_data, city, country):
     if air_quality_data is not None:
-        # Extract relevant information
         air_quality_info = {
             "aqi": air_quality_data["data"].get("aqi"),
             "last_update": pd.Timestamp(air_quality_data["data"]["time"].get("iso")), 
@@ -98,10 +84,8 @@ def transform_data(air_quality_data, city, country):
         
         air_quality_info["aqi_level"] = aqi_category
 
-        # Create a DataFrame from the extracted information
         df = pd.DataFrame(air_quality_info, index=[0])
         
-        # Apply constraints to each column
         constraints = {
             'aqi': int,                     
             'city': str,                    
@@ -119,7 +103,6 @@ def transform_data(air_quality_data, city, country):
         for col, dtype in constraints.items():
             df[col] = df[col].astype(dtype)
         
-        # Print data types of each column
         print(df.dtypes)
         
         return df
@@ -129,22 +112,15 @@ def transform_data(air_quality_data, city, country):
 def load_data_to_csv(data, output_directory, city, country):
     if data is not None:
         current_time_utc = datetime.utcnow()
-
-        # Add 7 hours to UTC time for GMT+7
         current_time_gmt7 = current_time_utc + timedelta(hours=7)
-
-        # Format the current time in GMT+7 timezone
         current_time_gmt7_str = current_time_gmt7.strftime("%Y_%m_%d-%H_%M_%S")
 
         file_name = f"Air_Quality_Data_{current_time_gmt7_str}.csv"
 
-        # Create the output directory if it doesn't exist
         os.makedirs(output_directory, exist_ok=True)
 
-        # Create the full output file path
         output_file_path = os.path.join(output_directory, file_name)
-
-        # Save data to CSV
+        
         data.to_csv(output_file_path, index=False)
         print(f"Data saved to '{output_file_path}'")
     else:
