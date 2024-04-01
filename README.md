@@ -29,7 +29,7 @@ The project aim to build end-to-end data pipeline that extract air quality data 
 
 - DAG
 
-![image](https://github.com/EarthSuppawoot/air-quality/assets/157554832/be27aada-c130-4e7f-942b-9417aac2ad2a)
+![image](https://github.com/EarthSuppawoot/air-quality/assets/157554832/9e79aeb0-e7b6-4101-b711-ae52e9294cdd)
 
 ### Technologies and Tools
 - Cloud: Amazon Web Services (AWS)
