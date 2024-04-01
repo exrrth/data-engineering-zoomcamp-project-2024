@@ -14,8 +14,6 @@ default_args = {
     'start_date': datetime(2024, 3, 18)
 }
 
-file_postfix = datetime.now().strftime("%Y%m%d")
-
 dag = DAG(
     dag_id='etl_aqicn_pipeline',
     default_args=default_args,
@@ -32,7 +30,7 @@ locations = [
     # can add more coordinates right here
 ]
 
-# extraction from aqicn
+# extraction 
 extract = PythonOperator(
     task_id='extract_from_aqicn',
     python_callable=air_quality_pipeline,

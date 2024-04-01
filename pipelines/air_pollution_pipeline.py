@@ -33,6 +33,6 @@ def air_quality_pipeline(locations, **kwargs):
     current_time_gmt7 = current_time_utc + timedelta(hours=7)
     current_time_gmt7_str = current_time_gmt7.strftime("%Y_%m_%d-%H_%M_%S")
 
-    # Push file path to XCom
+    # Push to XCom
     file_path = os.path.join(output_directory, f"Air_Quality_Data_{current_time_gmt7_str}.csv")
     kwargs['ti'].xcom_push(key='file_path', value=file_path)
