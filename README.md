@@ -1,7 +1,9 @@
 # AIR Quality Data Project
 
 ### Problem Statement
-The project aim to build end-to-end data pipeline that extract air quality data from api. The extracted data will be processed and enri
+The project aims to establish an end-to-end data pipeline for extracting air quality data from APIs, transforming it, and storing it in a data lake or warehouse. The pipeline will enable visualization for tracking trends and statistical insights, facilitating informed decision-making regarding environmental conditions.
+
+The Air Quality Index (AQI) is used for reporting daily air quality. It tells you how clean or polluted your air is, and what associated health effects might be a concern for you. The AQI focuses on health effects you may experience within a few hours or days after breathing polluted air.
 
 ### Pipeline Execution (DAG)
 - The DAG updates every 20 minutes to ensure data remains up-to-date. Normally, data is scheduled to be updated hourly, but occasional delays occur.
@@ -35,7 +37,7 @@ The project aim to build end-to-end data pipeline that extract air quality data 
 ### Technologies and Tools
 - **Cloud**: Amazon Web Services (AWS)
 - **Containerization**: Docker
-- ***Workflow Orchestration**: Apache Airflow
+- **Workflow Orchestration**: Apache Airflow
 - **Data Lake**: AWS S3
 - **Data Warehousing**: Amazon Redshift
 - **Data Visualization**: Power BI
