@@ -4,6 +4,17 @@
 The project aims to establish an end-to-end data pipeline for extracting air quality data from APIs, transforming it, and storing it in a data lake or warehouse. The pipeline will enable visualization for tracking trends and statistical insights, facilitating informed decision-making regarding environmental conditions.
 
 The Air Quality Index (AQI) is used for reporting daily air quality. It tells you how clean or polluted your air is, and what associated health effects might be a concern for you. The AQI focuses on health effects you may experience within a few hours or days after breathing polluted air.
+- **AQI Level and Recommendations**
+
+| AQI Range | Air Quality | Health Implications       | Recommendations                               |
+|-----------|-------------|---------------------------|-----------------------------------------------|
+| 0 - 50    | Good        | Little to no risk         | None                                          |
+| 51 - 100  | Moderate    | Slight risk for sensitive individuals | Limit outdoor activity for sensitive groups |
+| 101 - 150 | Unhealthy for Sensitive Groups | Risk for sensitive groups | Limit outdoor activity for sensitive groups |
+| 151 - 200 | Unhealthy   | Risk for everyone         | Avoid prolonged outdoor activity             |
+| 201 - 300 | Very Unhealthy | Emergency conditions  | Avoid outdoor activity                        |
+| 300+      | Hazardous   | Severe health effects     | Avoid all outdoor activity                   |
+
 
 ### Pipeline Execution (DAG)
 - The DAG updates every 20 minutes to ensure data remains up-to-date. Normally, data is scheduled to be updated hourly, but occasional delays occur.
@@ -51,18 +62,6 @@ The dashboard will have four parts with control filter on time and city that rep
 2. **AQI Visualization Map**: Displays air quality levels in different cities.
 3. **Temperature-AQI Relationship Plot**: Explains how temperature affects air quality.
 4. **Distribution by AQI Level**: Illustrates how often different air quality levels occur.
-
-- **AQI Level and Recommendations**
-
-| AQI Range | Air Quality | Health Implications       | Recommendations                               |
-|-----------|-------------|---------------------------|-----------------------------------------------|
-| 0 - 50    | Good        | Little to no risk         | None                                          |
-| 51 - 100  | Moderate    | Slight risk for sensitive individuals | Limit outdoor activity for sensitive groups |
-| 101 - 150 | Unhealthy for Sensitive Groups | Risk for sensitive groups | Limit outdoor activity for sensitive groups |
-| 151 - 200 | Unhealthy   | Risk for everyone         | Avoid prolonged outdoor activity             |
-| 201 - 300 | Very Unhealthy | Emergency conditions  | Avoid outdoor activity                        |
-| 300+      | Hazardous   | Severe health effects     | Avoid all outdoor activity                   |
-
   
 - **Bangkok**
  
