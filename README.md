@@ -64,7 +64,7 @@ The dashboard will have four parts with control filter on time and city that rep
 4. **Distribution by AQI Level**: Illustrates how often different air quality levels occur.
    
 
-   (For the live dashboard, I cannot publish PowerBI because I don't have any business email, so here is an example for the dashboard.)
+   For the live dashboard, I cannot publish Power BI because I don't have any business email. So, here is an example of the dashboard. (The data provided is only for the day that DAG is running.)
    
   
 - **Bangkok**
