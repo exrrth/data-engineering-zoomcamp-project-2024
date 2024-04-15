@@ -27,7 +27,7 @@ locations = [
     {'latitude': 18.787746, 'longitude': 98.993126}, # Chiang Mai
     {'latitude': 13.7563305, 'longitude': 100.50176}, # Bangkok
     {'latitude': 7.884488, 'longitude': 98.39128} # Phuket
-    # can add more coordinates right here
+    # More coordinates can be added here
 ]
 
 # extraction 
