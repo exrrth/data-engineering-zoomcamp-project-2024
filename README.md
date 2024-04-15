@@ -85,52 +85,44 @@ The dashboard will have four parts with control filter on time and city that rep
 
 ### Setup Instructions
 
- 1. Setup your AWS account and create s3 bucket
- 2. Cloning Repository
-To get started, clone the repository to your local machine:
+1. Setup your AWS account and create s3 bucket
+2. Clone the repository to your local machine to get started.
+   
+   ```bash
+   git clone https://github.com/exrrth/data-engineering-zoomcamp-project-2024.git
+   ```
 
-```bash
-git clone https://github.com/exrrth/data-engineering-zoomcamp-project-2024.git
-```
+3. Modify the DAG file to add more cities of interest. You can edit the DAG file manually.
+![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/24b767fc-ec39-4589-988a-a82401ce539a)
 
- 3. Modifying DAG File
-Next, modify the DAG file to add more cities of interest. You can edit the DAG file manually.
+4. Run Airflow using Docker to execute the pipeline:
 
- 4. Running Airflow with Docker
-Run Airflow using Docker to execute the pipeline:
+   ```bash
+   docker compose up -d --build
+   ```
 
-```bash
-docker compose up -d --build
-```
+5. Access the Airflow UI at localhost:8080 and log in with credentials (airflow:airflow).
+![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/18b1e3a6-afb2-470a-8674-1a5300d2c952)
 
- 5. Accessing Airflow UI
-Go to the Airflow UI at localhost:8080 and log in with credentials (airflow:airflow).
+6. Enable the DAG within the Airflow UI.
 
- 6. Enabling DAG
-Enable the DAG within the Airflow UI.
+7. Verify the data in the AWS S3 bucket.
 
- 7. Checking Data in AWS S3
-Verify the data in the AWS S3 bucket.
-
- 8. Running AWS Glue Job
-Go to AWS Glue and run the job.
+8. Go to AWS Glue and run the job.
 ![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/c4d536f6-f9c6-423b-9558-1d00c0b05689)
 
- 9. Using Crawler to Crawl Data
-Utilize the AWS Glue crawler to crawl the data.
+9. Utilize the AWS Glue crawler to crawl the data.
 ![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/a5a3ee8b-79b2-4813-937d-5584b357091a)
 
- 10. Viewing Data in AWS Athena
-Check the data in the tables within AWS Athena.
+10. Check the data in the tables within AWS Athena.
 ![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/a4a928a0-6a1e-4eed-9603-6c1e636d67ca)
 ![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/a27f7611-80e2-4aa5-9f2c-69c509d60879)
 
- 11. Stopping Docker
-To stop your Docker container, use the following command:
-
-```bash
-docker-compose down
-```
+11. To stop your Docker container, use the following command:
+   
+   ```bash
+   docker-compose down
+   ```
 
 
 
