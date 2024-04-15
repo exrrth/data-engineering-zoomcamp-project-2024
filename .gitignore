@@ -2,7 +2,6 @@
 /data/output
 /logs
 /demos
-airflow.env
 /config
 /dags/__pycache__
 /etls/__pycache__
