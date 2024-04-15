@@ -62,6 +62,10 @@ The dashboard will have four parts with control filter on time and city that rep
 2. **AQI Visualization Map**: Displays air quality levels in different cities.
 3. **Temperature-AQI Relationship Plot**: Explains how temperature affects air quality.
 4. **Distribution by AQI Level**: Illustrates how often different air quality levels occur.
+   
+
+   (For the live dashboard, I cannot publish PowerBI because I don't have any business email, so here is an example for the dashboard.)
+   
   
 - **Bangkok**
  
@@ -76,6 +80,57 @@ The dashboard will have four parts with control filter on time and city that rep
 - **Phuket**
 
 ![image](https://github.com/EarthSuppawoot/air-quality/assets/157554832/f5334dd9-9ecd-41f9-8392-c727ffa768f2)
+
+
+
+### Setup Instructions
+
+ 1. Setup your AWS account and create s3 bucket
+ 2. Cloning Repository
+To get started, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/exrrth/data-engineering-zoomcamp-project-2024.git
+```
+
+ 3. Modifying DAG File
+Next, modify the DAG file to add more cities of interest. You can edit the DAG file manually.
+
+ 4. Running Airflow with Docker
+Run Airflow using Docker to execute the pipeline:
+
+```bash
+docker compose up -d --build
+```
+
+ 5. Accessing Airflow UI
+Go to the Airflow UI at localhost:8080 and log in with credentials (airflow:airflow).
+
+ 6. Enabling DAG
+Enable the DAG within the Airflow UI.
+
+ 7. Checking Data in AWS S3
+Verify the data in the AWS S3 bucket.
+
+ 8. Running AWS Glue Job
+Go to AWS Glue and run the job.
+![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/c4d536f6-f9c6-423b-9558-1d00c0b05689)
+
+ 9. Using Crawler to Crawl Data
+Utilize the AWS Glue crawler to crawl the data.
+![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/a5a3ee8b-79b2-4813-937d-5584b357091a)
+
+ 10. Viewing Data in AWS Athena
+Check the data in the tables within AWS Athena.
+![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/a4a928a0-6a1e-4eed-9603-6c1e636d67ca)
+![image](https://github.com/exrrth/data-engineering-zoomcamp-project-2024/assets/157554832/a27f7611-80e2-4aa5-9f2c-69c509d60879)
+
+ 11. Stopping Docker
+To stop your Docker container, use the following command:
+
+```bash
+docker-compose down
+```
 
 
 
