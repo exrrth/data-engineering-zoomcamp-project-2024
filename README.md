@@ -121,7 +121,7 @@ The dashboard will have four parts with control filter on time and city that rep
 11. To stop your Docker container, use the following command:
    
    ```bash
-   docker-compose down
+   docker-compose stop
    ```
 
 
